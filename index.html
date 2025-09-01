@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex's Portfolio</title>
+  <link rel="icon" href="data:," />
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: repeating-conic-gradient( from 240deg, indigo 30%, black 40%);
+      border-radius: 20%;
+      background-size: 500% 500%;
+      animation: gradientMove 10s ease infinite;
+      color: #eee;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background-color: rgba(7, 7, 7, 0.548);
+      color: goldenrod;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      display: none;
+      max-width: 900px;
+      margin: 2rem auto;
+      background: transparent;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px tan;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: goldenrod
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      color: lightsalmon;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: transparant;
+      color: lime;
+      box-shadow: orange;
+    }
+
+    /* Floating Button */
+    .floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #00cc66;
+      color: #111;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgb(250, 249, 249);
+      z-index: 1000;
+    }
+
+    .floating:hover {
+      background: black;
+      color: #00cc66;
+    }
+
+    .social-links {
+      display: none;
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      background: rgba(0,0,0,0.8);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .social-links a {
+      display: block;
+      color: #00ff88;
+      text-decoration: none;
+      margin: 0.5rem 0;
+      font-weight: bold;
+    }
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+    .profile-pic {
+      display: BLOCK;
+  margin: 0 auto 20px;
+  width: 270px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px transparent;
+  box-shadow: 0 0 15px rgba(1, 252, 14, 0.973);
+}
+.puns {
+  color: aquamarine;
+  outline-color: cyan;
+}
+.idk{
+  text-decoration: underline;
+  text-shadow: cyan;
+  font-style: oblique;
+  font-size: x-large;
+}
+.cyan {
+  color: cyan;
+}
+.mag {
+  color: rebeccapurple;
+}
+.gr {
+  color: limegreen;
+}
+.b{color: maroon;}
+.w{color: olivedrab;}
+.start-btn{
+  background-color: whitesmoke ;
+}
+  </style>
+</head>
+
+<body>
+  <!-- Start screen -->
+  <div id="start-screen" style="text-align:center; margin-top: 20%;">
+    <h1>Welcome to My Portfolio</h1>
+    <button id="start-btn" style="font-size: xx-large;"><em><u>Enter</u></em></button>
+  </div>
+
+  <!-- Semua konten utama -->
+  <div id="main-content" style="display:none;">
+    <audio id="bgm" loop></audio>
+
+    <header>
+      <h1>Alex's Portfolio</h1>
+      <p class="w">English Enthusiast <span class="b">|</span> 
+        <span class="cyan">Bartender</span> <span class="b">|</span> 
+        <span class="gr">Future Teacher</span> <span class="b">|</span> 
+        <span class="mag">Curious Soul</span></p>
+    </header>
+
+    <!-- Page 1 -->
+    <div class="page active" id="page1">
+      <h2>About Me</h2>
+              <p><img src="data:image/jpeg;base64,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" alt="Foto Axle" class="profile-pic">
+<p class="puns">SUP!!! My name is Alexander William Suryajaya, but y’all can call me Alex or William for short. I'm 16 and currently one of the senior high school student at Gracia and a partake of the student council. Enough with introductions — let’s delve deeper into who I really am and what to be in the upcoming future. This portfolio is not just about listing down facts like a resume, it’s about giving you a taste of my personality, my passions, and the journey I'm chasing with everything I’ve got.</p> 
+    <p class="puns">If you’re expecting some boring list like “Hi, I’m Alex, I’m X years old, I like Y and Z” — you’ve come to the wrong page. Instead, what you’ll get here is a real peek into my world: the kid who got fascinated by shiny cocktail shakers, the guy who couldn’t stop falling in love with the English language, and the dreamer who wants to combine both passions into something worth remembering.</p>
+    
+    <div class="nav-buttons">
+      <span></span>
+      <button onclick="goToPage(2)" class="idk"> Next ></button>
+    </div>
+  </div>
+
+    <!-- Page 2 -->
+    <div class="page" id="page2">
+      <h2>Passion for Mixing Drinks</h2>
+    <p class="puns">To start it off, let’s talk about my love for mixing drinks and beverages. You might wonder, “Why mixing drinks out of all things?” Honestly, it all began with one simple scene — watching someone shake a cocktail shaker. The way it moved, the sound of the ice clashing, the smooth pour into the glass — it looked like art. A performance. And little inquisitive Alex just stood there thinking, “Dang, that’s cool. Should I try that too?”</p> 
+   <p class="puns">So I tried. At first, my “creations” were questionable at best. Imagine soda mixed with coffee, juice splashed with milk, or some Frankenstein combo that would probably scare any professional bartender. But here’s the thing: even when the results were disasters, I loved the process. There’s something exhilarating about experimentation — about not knowing exactly what will come out but being excited to taste it anyway. Every failure was silly yet entertaining but that's also what makes me a step ahead, every success was a cherry on top of my journey, and slowly but surely, the spark grew into a fire.</p> 
+   <p class="puns">Now, when I think of drinks, I don’t just think of flavors. I think of experiences. Cocktails like an Old Fashioned for those who like it classy, mocktails like an UNtequilla Sunrise for those who want to skip the alcohol but not the vibe, or even something like an Espresso Martini for the coffee lovers who also want a kick. It all depends on the customer, their mood, their story.</p> 
+   <p class="puns">And that’s the beauty of bartending: it’s not just about liquids, it’s about people. Someone might walk up with a long face, and while mixing their drink, I get to listen to them. Maybe they need to rant, maybe they just need someone to nod along. And if they’re open to it, maybe I can even slip in a little advice while pouring. Bartending, to me, is part craft, part therapy, and part friendship.</p> 
+   <h2>The Early Spark</h2> 
+   <p class="puns">I’ve been playing around with mixed drinks since I was just a kid. No, not the strong stuff — just random combinations from the refrigerator. My parents probably thought I was wasting juice boxes, but I swear I was just conducting important “research.” Over time, I realized that mixing isn’t just about taste. It’s about curiosity, about learning what works and what doesn’t, about trial and error in the most delicious way possible.</p> 
+   <p class="puns">That first spark has never gone away. Even today, whenever I watch someone mix drinks with flair, or whenever I get the chance to experiment myself, I feel the same excitement I felt as a kid. It’s fascinating how something so simple — shaking liquids together — can turn into something that not only tastes good but also creates a moment for someone.</p> 
+    <div class="nav-buttons">
+      <button onclick="goToPage(1)" class="idk"> < Previous </button>
+      <button onclick="goToPage(3)" class="idk">Next ></button>
+    </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page" id="page3">
+      <h2>Love for the English Language</h2>
+    <p class="puns">Now, let’s shift gears to another passion of mine: English. To me, English is like an endless universe — no boundaries, no limits. Every new word is a star, every rule is a constellation, and every sentence I create feels like I’m charting my own path across the galaxy.</p> 
+   <p class="puns">Some people might see English as just a subject in school, but I see it as a lifestyle. It’s everywhere — in movies, music, games, conversations, even memes. And the more you dive into it, the more layers you discover. Like in this portfolio, maybe you’ve stumbled upon words in this portfolio like exhilirating, constellation, inquisitive or even one which I'm unaware of. Maybe some were new to you, maybe some were familiar but used in a way you'd never expected at first. That’s what makes English fun — it always keeps you on your toes.</p> 
+   <p class="puns">But it’s not always smooth sailing. I’ve stumbled plenty of times with pronunciation, grammar, or confusing expressions. Yet I never gave up. Why? Because every mistake is just proof that I’m learning. And the rewards are worth it: books I can now read without translation, movies I can enjoy in their original language, songs I can sing without mumbling, and most importantly, conversations I can have with people from across the world.</p> 
+   <h2>The desire of being an English Teacher</h2>
+  <p class="puns">For the future, I see myself becoming an English teacher. Now, I know what you’re thinking — some people say it’s a tough job with not-so-great pay. They’ll say things like, “Why bother? You could do something that earns more.” But here’s my answer: teaching isn’t just about money. It’s about impact.</p> 
+   <p class="puns">An English teacher isn’t just someone who explains grammar rules. They’re someone who sparks curiosity, builds confidence, and gives students tools to reach further than they thought they could possibly. Imagine being the reason a student finally dares to speak up in English, or being the one who introduces them to a book that changes how they see the world. That’s the kind of reward you can’t measure in numbers.</p> 
+   <p class="puns">And here’s the twist: I don’t plan to give up bartending either. Maybe my life will have two sides — teaching by day, mixing by night. Strange combo? Maybe. But both passions have the same core: creating connections. One through words, the other through drinks. Both are about listening, understanding, and sharing a little joy with others.</p> 
+    <div class="nav-buttons">
+      <button onclick="goToPage(2)" class="idk">< Previous</button>
+      <button onclick="goToPage(4)" class="idk">Next ></button>
+    </div>
+    </div>
+
+    <!-- Page 4 -->
+   <div class="page" id="page4">
+    <h2>Reflection</h2> 
+   <p class="puns">This portfolio is more than a self-introduction — it’s a mirror of who I am. Honest, curious, ambitious, and deeply in love with learning. I don’t pretend to have everything figured out, but I know this much: I won’t stop chasing growth.</p> 
+   <p class="puns">I picture myself years from now, looking back at this page and smiling. Not because everything went exactly as planned — life never works like that — but because I kept moving forward. Every drink mixed, every word learned, every lesson taught will be part of the road that led me there.</p> 
+   <p class="puns">I may stumble. I may get lost for a while. But I’ll never quit. That’s my promise to myself. And maybe, just maybe, when you sip your next drink or learn a new English word, you’ll think of me — Alex, the guy who chased passions with both hands wide open.</p> 
+   <h2>Closing Statement</h2> 
+   <p class="puns">So that’s me. Not just Alex or William, not just a dreamer, but an establisher of experiences. Whether through the clink of ice in a shaker or the sound of English words rolling off the tongue, I want to leave an impression. Something genuine, something lasting.</p>
+    <p class="puns">At the end of the day, I’m not chasing perfection. I’m chasing passion, curiosity, and growth. And if you’re reading this, you’re already part of that journey. Cheers to what’s ahead.</p>
+    <div class="nav-buttons">
+      <button onclick="goToPage(3)" class="idk">< Previous</button>
+      <span></span>
+    </div>
+    </div>
+
+    <button id="mute-btn">🔈Mute</button>
+     
+    <!-- Floating Button -->
+  <div class="floating" onclick="toggleLinks()">Social Links</div>
+  <div class="social-links" id="socialLinks">
+    <a href="https://youtube.com/@axostudio_1?si=Up8kW3PAjxsasvsK" target="_blank">YouTube</a>
+    <a href="https://discord.gg/DTnefKR4Ge" target="_blank">Discord</a>
+    <a href="https://github.com/xcel-droid" target="_blank">Github</a>
+  </div>
+
+<script>
+  const startScreen = document.getElementById("start-screen");
+  const mainContent = document.getElementById("main-content");
+  const startBtn = document.getElementById("start-btn");
+  const audio = document.getElementById("bgm");
+  const muteBtn = document.getElementById("mute-btn"); // <--- tambahin ini
+
+  startBtn.addEventListener("click", () => {
+  startScreen.style.display = "none";   // ilangin start screen
+  mainContent.style.display = "block";  // munculin konten utama
+  goToPage(1);                          // buka page1
+  playSong("lagu5.mp3");                // langsung play lagu pertama
+});
+
+  function goToPage(num) {
+    document.querySelectorAll('.page').forEach(pg => pg.classList.remove('active'));
+    document.getElementById('page' + num).classList.add('active');
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    if (num === 1) playSong("lagu5.mp3");
+    if (num === 2) playSong("lagu.mp3");
+    if (num === 3) playSong("lagu3.mp3");
+    if (num === 4) playSong("lagu4.mp3");
+  }
+
+  function playSong(src) {
+    audio.src = src;
+    audio.currentTime = 0;
+    audio.play().catch(() => {
+      console.log("Autoplay dicegah browser, tunggu interaksi user.");
+    });
+  }
+
+  // tombol mute / unmute
+  muteBtn.addEventListener("click", () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? "🔈Unmute" : "🔈Mute";
+  });
+</script>
+<script>
+function countWords(text) {
+  // hapus tag HTML, sisain teks
+  let cleaned = text.replace(/<[^>]*>/g, ' ')
+                    .replace(/\s+/g, ' ')
+                    .trim();
+  if (!cleaned) return 0;
+  return cleaned.split(' ').length;
+}
+
+function showWordCounts() {
+  let pages = document.querySelectorAll('.page');
+  let total = 0;
+
+  pages.forEach((page, i) => {
+    let words = countWords(page.innerHTML);
+    total += words;
+    console.log(`Page ${i + 1}: ${words} kata`);
+  });
+
+  console.log(`Total semua page: ${total} kata`);
+}
+
+  function toggleLinks() {
+    const links = document.getElementById("socialLinks");
+    if (links.style.display === "block") {
+      links.style.display = "none";
+    } else {
+      links.style.display = "block";
+    }
+  }
+
+</script>
+
+</body>
